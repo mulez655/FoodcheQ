@@ -1,0 +1,162 @@
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+        <img
+          src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png"
+          alt="FoodCheQ logo"
+          class="h-10 w-auto"
+        />
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex items-center gap-8">
+        <!-- Menu dropdown -->
+        <div class="relative">
+          <button
+            type="button"
+            class="inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-slate-900"
+            data-menu-button
+          >
+            Menu
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+
+          <div
+            class="absolute left-0 mt-3 w-56 rounded-xl border border-slate-200 bg-white shadow-lg p-2 hidden"
+            data-menu-panel
+          >
+            <a href="index.html" class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-50">Home</a>
+            <a href="about.html" class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-50">About</a>
+            <a href="product-category.html" class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-50">Shop</a>
+            <a href="sample.html" class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-50">Request Sample</a>
+            <a href="wishlist.html" class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-50">Wishlist</a>
+          </div>
+        </div>
+
+        <!-- Big CTAs -->
+        <a href="request-logistics.html" class="text-[11px] leading-tight font-semibold tracking-wide text-slate-800 hover:text-slate-950">
+          REQUEST <br />LOGISTICS
+        </a>
+        <a href="track-shipment.html" class="text-[11px] leading-tight font-semibold tracking-wide text-slate-800 hover:text-slate-950">
+          TRACK <br />SHIPMENT
+        </a>
+        <a href="register.html" class="text-[11px] leading-tight font-semibold tracking-wide text-slate-800 hover:text-slate-950">
+          BECOME A <br />PARTNER
+        </a>
+
+        <!-- Icons -->
+        <div class="flex items-center gap-5 pl-2">
+          <!-- Search -->
+          <button type="button" class="text-slate-700 hover:text-slate-900" data-open-search title="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+          <!-- Guest -->
+          <a href="login.html" class="text-slate-700 hover:text-slate-900" data-guest title="Account">
+            <i class="fa-solid fa-user"></i>
+          </a>
+
+          <!-- Logged in -->
+          <a href="orders.html" class="text-slate-700 hover:text-slate-900 hidden" data-user title="My Orders">
+            <i class="fa-solid fa-receipt"></i>
+          </a>
+
+          <button type="button" class="text-slate-700 hover:text-slate-900 hidden" data-user data-logout title="Logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+
+          <!-- Cart -->
+          <a href="cart.html" class="relative text-slate-700 hover:text-slate-900" title="Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span
+              id="cartCount"
+              class="absolute -top-2 -right-3 inline-flex min-w-[18px] items-center justify-center rounded-full bg-emerald-600 px-1.5 py-0.5 text-[10px] font-bold text-white"
+              >0</span
+            >
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile buttons -->
+      <div class="flex lg:hidden items-center gap-3">
+        <a href="cart.html" class="relative text-slate-700 hover:text-slate-900" aria-label="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span
+            id="cartCountMobile"
+            class="absolute -top-2 -right-3 inline-flex min-w-[18px] items-center justify-center rounded-full bg-emerald-600 px-1.5 py-0.5 text-[10px] font-bold text-white"
+            >0</span
+          >
+        </a>
+
+        <button type="button" class="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-3 py-2 text-slate-700"
+          data-mobile-toggle aria-label="Open menu">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile panel -->
+  <div class="lg:hidden hidden border-t border-slate-200 bg-white" data-mobile-panel>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 space-y-3">
+      <div class="grid grid-cols-2 gap-2">
+        <a href="index.html" class="rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50">Home</a>
+        <a href="about.html" class="rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50">About</a>
+        <a href="product-category.html" class="rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50">Shop</a>
+        <a href="sample.html" class="rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50">Request Sample</a>
+        <a href="wishlist.html" class="rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50">Wishlist</a>
+        <a href="track-shipment.html" class="rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50">Track</a>
+      </div>
+
+      <div class="flex gap-2">
+        <a href="request-logistics.html" class="flex-1 rounded-xl bg-slate-900 px-4 py-2 text-center text-sm font-semibold text-white hover:bg-slate-800">
+          Request Logistics
+        </a>
+        <a href="register.html" class="flex-1 rounded-xl border border-slate-200 px-4 py-2 text-center text-sm font-semibold text-slate-800 hover:bg-slate-50">
+          Become Partner
+        </a>
+      </div>
+
+      <div class="flex items-center justify-between">
+        <a href="login.html" class="text-sm font-medium text-slate-700 hover:text-slate-900" data-guest>Login</a>
+
+        <a href="orders.html" class="text-sm font-medium text-slate-700 hover:text-slate-900 hidden" data-user>My Orders</a>
+
+        <button type="button" class="text-sm font-semibold text-red-600 hover:text-red-700 hidden" data-user data-logout>
+          Logout
+        </button>
+
+        <button type="button" class="text-sm font-medium text-slate-700 hover:text-slate-900" data-open-search>
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search modal (simple, we’ll improve later) -->
+  <div class="fixed inset-0 z-[60] hidden" data-search-modal>
+    <div class="absolute inset-0 bg-black/50" data-close-search></div>
+    <div class="absolute left-1/2 top-16 w-[92%] max-w-xl -translate-x-1/2 rounded-2xl bg-white p-4 shadow-xl">
+      <div class="flex items-center gap-2">
+        <input
+          type="text"
+          placeholder="Search products…"
+          class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-400"
+          id="searchInput"
+        />
+        <button type="button" class="rounded-xl border border-slate-200 px-3 py-3 text-slate-700 hover:bg-slate-50" data-close-search>
+          ✕
+        </button>
+      </div>
+
+      <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3" id="searchResults"></div>
+    </div>
+  </div>
+</header>
+

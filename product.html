@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product | FoodCheQ</title>
+
+    <!-- Tailwind compiled CSS -->
+    <link rel="stylesheet" href="dist/css/style.css" />
+
+    <!-- Fonts + Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      html,
+      body {
+        font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-slate-900">
+    <!-- Top Headline Bar -->
+    <div class="w-full bg-slate-900 text-white">
+      <div
+        class="mx-auto max-w-7xl px-4 py-2 flex items-center justify-between gap-4"
+      >
+        <div
+          class="text-xs sm:text-sm whitespace-nowrap overflow-hidden text-ellipsis"
+        >
+          <span class="mr-4 opacity-90">FREE SHIPPING AND RETURNS</span>
+          <span class="mr-4 opacity-90">LIMITED TIME OFFER - SHOP NOW</span>
+          <span class="opacity-90">BECOME A PARTNER TODAY</span>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-4">
+          <a
+            href="login.html"
+            class="text-xs uppercase tracking-wide hover:text-brand-green"
+            >Request<br />Logistics</a
+          >
+          <a
+            href="register.html"
+            class="text-xs uppercase tracking-wide hover:text-brand-green"
+            >Become<br />a Partner</a
+          >
+
+          <!-- Currency -->
+          <form
+            action="https://foodcheq.coop/set-currency"
+            method="POST"
+            class="flex items-center"
+          >
+            <input
+              type="hidden"
+              name="_token"
+              value="hBap8p3Rj0gaLm42Yhgu4TZJH08MesPvE74ATfN9"
+            />
+            <select
+              id="currency"
+              name="currency"
+              onchange="this.form.submit()"
+              class="bg-white/10 text-white text-xs rounded-lg px-2 py-1 outline-none ring-1 ring-white/15 focus:ring-2 focus:ring-brand-green"
+            >
+              <option value="USD" selected class="text-slate-900">USD ($)</option>
+              <option value="NGN" class="text-slate-900">NGN (₦)</option>
+            </select>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar Mount -->
+    <div id="navbarMount"></div>
+
+
+    <!-- Main -->
+    <main class="mx-auto max-w-7xl px-4 py-8">
+      <!-- Breadcrumb / Back -->
+      <div class="flex items-center justify-between gap-3 mb-6">
+        <a
+          href="product-category.html"
+          class="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-brand-green"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+          Back to Shop
+        </a>
+
+        <a
+          href="wishlist.html"
+          class="text-sm text-slate-600 hover:text-brand-green"
+        >
+          <i class="fa-regular fa-heart mr-1"></i> Wishlist
+        </a>
+      </div>
+
+      <!-- Product Section -->
+      <section class="bg-white border rounded-2xl p-4 sm:p-6 shadow-soft">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+          <!-- Image -->
+          <div class="rounded-2xl overflow-hidden bg-slate-50 border">
+            <img
+              id="productImage"
+              src=""
+              alt=""
+              class="w-full h-[320px] sm:h-[420px] object-cover"
+            />
+          </div>
+
+          <!-- Content -->
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">
+              <span id="productName"></span>
+              <span id="productPriceInline" class="text-brand-green"></span>
+            </h1>
+
+            <p id="productShortDesc" class="mt-3 text-slate-600"></p>
+
+            <div class="mt-4 flex items-end gap-3">
+              <p id="productPrice" class="text-2xl font-bold text-brand-green"></p>
+              <span class="text-xs text-slate-500 pb-1"
+                >Secure checkout • Fast delivery</span
+              >
+            </div>
+
+            <!-- Actions -->
+            <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <button
+                id="addToCartBtn"
+                class="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-green px-4 py-3 text-white font-semibold hover:opacity-90 transition"
+                data-name=""
+                data-price=""
+                data-image=""
+                data-qty="1"
+                type="button"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add to Cart
+              </button>
+
+              <button
+                id="addToWishlistBtn"
+                class="inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-3 font-semibold text-slate-800 hover:bg-slate-50 transition"
+                data-name=""
+                data-price=""
+                data-image=""
+                type="button"
+              >
+                <i class="fa-regular fa-heart"></i>
+                Wishlist
+              </button>
+
+              <a
+                href="sample.html"
+                class="inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-3 font-semibold text-slate-800 hover:bg-slate-50 transition"
+              >
+                <i class="fa-solid fa-mug-hot"></i>
+                Free Sample
+              </a>
+            </div>
+
+            <!-- Trust chips -->
+            <div class="mt-5 flex flex-wrap gap-2 text-xs">
+              <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700"
+                ><i class="fa-solid fa-truck-fast mr-1"></i> Fast Shipping</span
+              >
+              <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700"
+                ><i class="fa-solid fa-shield-halved mr-1"></i> Quality Checked</span
+              >
+              <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700"
+                ><i class="fa-solid fa-rotate-left mr-1"></i> Easy Returns</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Details -->
+        <div class="mt-8 border-t pt-6">
+          <h2 class="text-lg font-bold">Product Description</h2>
+          <p id="productLongDesc" class="mt-2 text-slate-600 leading-relaxed"></p>
+
+          <h2 class="mt-6 text-lg font-bold">Health Benefits</h2>
+          <ul id="productBenefits" class="mt-2 space-y-2 text-slate-700"></ul>
+        </div>
+      </section>
+
+      <!-- Related -->
+      <section class="mt-10">
+        <div class="flex items-center justify-between">
+          <h2 id="related-title" class="text-xl font-bold">Related Items</h2>
+          <a
+            href="product-category.html"
+            class="text-sm text-slate-600 hover:text-brand-green"
+            >View all</a
+          >
+        </div>
+
+        <div
+          id="relatedItems"
+          class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"
+        ></div>
+      </section>
+
+      <!-- Reviews -->
+      <section class="mt-10">
+        <h2 class="text-xl font-bold">Customer Reviews</h2>
+        <div
+          id="reviewsList"
+          class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
+        ></div>
+      </section>
+
+      <!-- Review Form -->
+      <section class="mt-6 bg-white border rounded-2xl p-4 sm:p-6 shadow-soft">
+        <h3 class="text-lg font-bold">Leave a Review</h3>
+
+        <form id="reviewForm" class="mt-4 space-y-3">
+          <input
+            type="text"
+            id="reviewName"
+            class="w-full rounded-xl border px-3 py-3 outline-none focus:ring-2 focus:ring-brand-green"
+            placeholder="Your name"
+            required
+          />
+
+          <div class="flex items-center gap-2">
+            <div id="starRating" class="text-amber-500 text-lg">
+              <i class="fa-regular fa-star cursor-pointer" data-value="1"></i>
+              <i class="fa-regular fa-star cursor-pointer" data-value="2"></i>
+              <i class="fa-regular fa-star cursor-pointer" data-value="3"></i>
+              <i class="fa-regular fa-star cursor-pointer" data-value="4"></i>
+              <i class="fa-regular fa-star cursor-pointer" data-value="5"></i>
+            </div>
+            <input type="hidden" id="ratingValue" name="rating" value="0" />
+            <span class="text-xs text-slate-500">Tap stars to rate</span>
+          </div>
+
+          <textarea
+            id="reviewComment"
+            rows="3"
+            class="w-full rounded-xl border px-3 py-3 outline-none focus:ring-2 focus:ring-brand-green"
+            placeholder="Write your review..."
+            required
+          ></textarea>
+
+          <button
+            type="submit"
+            class="inline-flex items-center justify-center rounded-xl bg-brand-green px-5 py-3 text-white font-semibold hover:opacity-90 transition"
+          >
+            Submit Review
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-12 bg-slate-900 text-white">
+      <div class="mx-auto max-w-7xl px-4 py-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <h4 class="font-bold">ABOUT US</h4>
+            <a href="https://foodcheq.coop" class="inline-block mt-3">
+              <img
+                src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png"
+                alt="Logo"
+                class="h-10 w-auto bg-white rounded-lg p-1"
+              />
+            </a>
+            <p class="mt-3 text-sm text-white/80 leading-relaxed">
+              FoodCheQ is a technology driven herbal agro-processing company that
+              transforms traditional medicinal crops into standardized, export-ready
+              foods and extracts while empowering smallholder farmers through a
+              cooperative and traceable supply chain.
+            </p>
+            <a
+              href="about.html"
+              class="mt-4 inline-flex rounded-xl border border-white/20 px-4 py-2 text-sm hover:bg-white/10"
+              >See More</a
+            >
+          </div>
+
+          <div>
+            <h4 class="font-bold">HELP</h4>
+            <ul class="mt-3 space-y-2 text-sm text-white/80">
+              <li>
+                <a class="hover:text-brand-green" href="https://foodcheq.coop/privacy"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-brand-green" href="https://foodcheq.coop/returns"
+                  >Returns + Exchanges</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-brand-green" href="https://foodcheq.coop/shipping_delivery"
+                  >Shipping + Delivery</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-brand-green" href="https://foodcheq.coop/terms"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-brand-green" href="https://foodcheq.coop/faq"
+                  >FAQ's</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold">QUICK NAVIGATION</h4>
+            <ul class="mt-3 space-y-2 text-sm text-white/80">
+              <li><a class="hover:text-brand-green" href="about.html">Our Story</a></li>
+              <li>
+                <a class="hover:text-brand-green" href="product-category.html"
+                  >Visit Our Store</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-brand-green" href="https://foodcheq.coop/vendors"
+                  >Our Partners</a
+                >
+              </li>
+              <li><a class="hover:text-brand-green" href="https://foodcheq.coop/blog">Blog</a></li>
+              <li>
+                <a class="hover:text-brand-green" href="https://foodcheq.coop/fedex_track"
+                  >Track Shipment</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-brand-green" href="https://foodcheq.coop/contact"
+                  >Contact Us</a
+                >
+              </li>
+              <li><a class="hover:text-brand-green" href="login.html">Account</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold">CONTACT US</h4>
+            <ul class="mt-3 space-y-2 text-sm text-white/80">
+              <li>
+                Address: Plot A, Central Orchard Section, Okiloki Farm Settlement,
+                Abbi NWLGA, Delta State
+              </li>
+              <li>
+                Email:
+                <a class="hover:text-brand-green" href="mailto:team@foodcheq.coop"
+                  >team@foodcheq.coop</a
+                >
+              </li>
+              <li>
+                Phone:
+                <a class="hover:text-brand-green" href="tel:+2349027921510"
+                  >+2349027921510</a
+                >
+              </li>
+            </ul>
+            <a
+              href="https://foodcheq.coop/contact"
+              class="mt-4 inline-flex rounded-xl border border-white/20 px-4 py-2 text-sm hover:bg-white/10"
+              >Get Directions</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="mt-10 border-t border-white/10 pt-6 text-center text-sm text-white/60"
+        >
+          © <span id="year"></span> FoodCheQ. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Small scripts -->
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Mobile drawer
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileDrawer = document.getElementById("mobileDrawer");
+      const closeDrawer = document.getElementById("closeDrawer");
+      const drawerBackdrop = document.getElementById("drawerBackdrop");
+
+      function openDrawer() {
+        mobileDrawer.classList.remove("hidden");
+        mobileDrawer.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeDrawerFn() {
+        mobileDrawer.classList.add("hidden");
+        mobileDrawer.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      menuBtn?.addEventListener("click", openDrawer);
+      closeDrawer?.addEventListener("click", closeDrawerFn);
+      drawerBackdrop?.addEventListener("click", closeDrawerFn);
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeDrawerFn();
+      });
+    </script>
+
+    <!-- Data + cart + dynamic loader (ORDER MATTERS) -->
+    <script src="cart.js"></script>
+    <script src="js/products-data.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/product-page.js"></script>
+  </body>
+</html>
